@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+:root{
+    --w-column: 200px;
+}
+
+body{
+    margin: 0;
+    background-color: #171718;
+    color: #fff;
+    
+    & *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    & header{
+        position: fixed;
+        z-index: 10;
+        width: min(1200px, 90vw);
+        height: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: grid;
+        grid-template-columns: 1fr calc(var(--w-column) * 3);
+        gap: 10%;
+        align-items: center;
+        & .logo{
+            & img{
+                width: 70px;
+                position: relative;
+                top: 10px;
+            }
+        }
+        & nav{
+            & ul{
+                display: flex;
+                grid-template-columns: repeat(3, var(--w-column));
+                cursor: pointer;
+                font-family: monospace;
+                font-size: large;
+            }
+            & li{
+               position: relative;
+               left: -700px;
+               margin-right: 50px;
+            }
+            & li:hover{
+                border-bottom: 1px solid gold;
+            }
+        }
+    }
+    & .carousel{
+        background-image: radial-gradient(#1d1e27, #101016);
+        height: 100vh;
+        top: -80px;
+        left: -65px;
+        width: 1280px;
+        overflow: hidden;
+        position: relative;
+        z-index: -1;
+        & .list{
+            width: min(1200px, 90vw);
+            margin: auto;
+            height: 100%;
+            position: relative;
+            & .item{
+                position: absolute;
+                inset: 0;
+                & figure{
+                    position: absolute;
+                    width: 100%;
+                    top: 50%;
+                    left: 200px;
+                    transform: translateY(-50%);
+                    & .img{
+                        width: 35%;
+                        transform: rotate(-30deg);
+                        /* -webkit-box-reflect: below 0         
+                        linear-gradient(
+                            transparent,
+                            rgba(53, 52, 52, 0.342)
+                        ); */
+                    }
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        background-color: #0b0b0b;
+                        width: 40%;
+                        height: 100px;
+                        top: 680px;
+                        left: 30px;
+                        border-radius: 50%;
+                        filter: blur(40px);
+                    }
+                }
+                & .content{
+                    position: absolute;
+                    z-index: 20;
+                    width: 70%;
+                    height: 100%;
+                    right: var(--w-column);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: end;
+                    gap: 20px;
+                    & .category{
+                        font-weight: 500;
+                        font-family: monospace;
+                        font-size: large;
+                    }
+                    & h2{
+                        font-family: 'League Gothic';
+                        font-size: 10em;
+                        text-shadow: 1px 2px #d0ff0086;
+                        line-height: 1em;
+                        top: -4px;
+                        position: relative;
+                    }
+                    & .description{
+                        color: rgba(228, 225, 225, 0.897);
+                        max-width: 380px;
+                        font-size: small;
+                        text-align: right;
+                        font-weight: 500;
+                        font-family: monospace;
+                    }
+                }
+                & .more{
+                    display: grid;
+                    grid-template-columns: repeat(2, 120px);
+                    gap: 20px;
+                    grid-template-rows: 35px;
+                    & button{
+                        border-radius: 30px;
+                        font-family: 'League Gothic';
+                        text-transform: uppercase;
+                        color: white;
+                        background-color: transparent;
+                        border: none;
+                        cursor: pointer;
+                        
+                        &:nth-child(1){
+                            background-image: 
+                            linear-gradient(
+                                to right, #81baa0, #659cdf
+                            );
+                        }
+                        &:nth-child(2){
+                            border: 2px solid transparent;
+                            background: 
+                            linear-gradient(#242745, #1d1e25)padding-box,
+                            linear-gradient(
+                                to right,  #81baa0, #659cdf
+                            )border-box;
+                        }
+
+                        &:nth-child(1):hover{
+                            border: 2px solid transparent;
+                            background: 
+                            linear-gradient(#242745, #1d1e25)padding-box,
+                            linear-gradient(
+                                to right,  #81baa0, #659cdf)border-box;
+                        }
+
+                        &:nth-child(2):hover{
+                            background-image: 
+                            linear-gradient(
+                                to right, #81baa0, #659cdf
+                            );
+                        }
+                    }
+                }
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                right: 200px;
+                width: 190px;
+                height: 100%;
+                border-left: 1px solid #324073;
+                border-right: 1px solid #324073;
+                pointer-events: none;
+                z-index: -1;
+            }
+            
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                height: 200px;
+                width: 90%;
+                left: 62px;
+                height: var(--w-column);
+                top: 53%;
+                border-top: 1px solid #324073;
+                border-bottom: 1px solid #324073;
+                pointer-events: none;
+        }
+        & .arrows{
+            width: min(1200px, 90vw);
+            position: absolute;
+            top: 51.5%;
+            left: 638px;
+            transform: translate(-50%, -25%);
+            pointer-events: none;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            & button{
+                width: 55px;
+                height: 55px;
+                break-before: 50%;
+                border: 1px solid #659cdf55;
+                color: #fff7;
+                border-radius: 50%;
+                font-family: monospace;
+                background-color: #232442;
+                font-size: large;
+                pointer-events: auto;
+                transition: 0.5s;
+                &:hover{
+                    border: 1px solid #659cdf;
+                    color: white;
+                } 
+               
+            }
+           
+        }
+         & .indicators{
+                position: absolute;
+                top: 52%;
+                height: var(--w-column);
+                width: min(1200px, 90vw);
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                flex-direction: column;
+                pointer-events: none;
+                justify-content: end;
+                gap: 10px;
+                & .number{
+                    font-family: 'League Gothic';
+                    font-size: 7vw;
+                }
+                & ul{
+                    display: flex;
+                    gap: 10px;
+                    & li{
+                        width: 50px;
+                        height: 5px;
+                        background-color: #659cdf;
+                        border-radius: 10px;
+                        pointer-events: auto;
+                        cursor: pointer;
+                        transition: 0.5s;
+                        &.active{
+                            background-color: yellow;
+                        }
+                    }
+            }
+               
+        }
+             
+    }
+}
+
+/* animation */
+
+body{
+    & .carousel{
+        --calculation: -1;
+        & .list{
+            & .item{
+                transition: 0.5s;
+                transform: translateX(calc(100vw * var(--calculation)));
+                opacity: 0;
+                & figure{
+                    & .img{
+                        transform: rotate(0deg);
+                        transition: 0.5s;
+                        transition-delay: 0.3s;
+                    }
+                }
+                & .content{
+                    & .category, h2, .description, .more{
+                        transform: translateX(calc(200px * var(--calculation)));
+                        transition: 0.7s;
+                        opacity: 0;
+                        transition-delay: 0.3s;
+                    }
+                    & h2{
+                        transition-delay: 0.5s;
+                    }
+                    & .description{
+                        transition-delay: 0.7s;
+                    }
+                    & .more{
+                        transition-delay: 0.9s;
+                    }
+                }
+            }
+            & .active{
+                opacity: 1;
+                transform: translateX(0);
+                & figure{
+                    & .img{
+                        transform: rotate(-30deg);
+                    }
+                }
+                & .content{
+                    & .category, h2, .description, .more{
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
